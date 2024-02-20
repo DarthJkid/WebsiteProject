@@ -15,7 +15,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Annapurna+SIL:wght@400;700&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Protest+Revolution&display=swap')
 
-:root {
+;root {
     --protest-revolution: "Protest Revolution", sans-serif;
     --annapurna: "Annapurna", sans-serif;
     --neuton: "Neuton", serif;
@@ -25,4 +25,9 @@
     --third-color-blvck: #0B0C0C;
     --color-white: #fff;
     --color-creamson: #fff0de;
-  }
+  
+}
+
+
+
+

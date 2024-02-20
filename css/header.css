@@ -10,10 +10,67 @@
     padding: 20px;
 }
 
+.header__logo h4{
+    font-family: var(--protest-revolution);
+    font-size: 16px;
+    text-transform: uppercase;
+    line-height: 20px;
+    cursor: pointer;
+}
+
 .header__logo-overlay{
     position: absolute;
     inset: 0;
     width: 100%;
-    background-color: var(--secondary-color);
+    height: 70%;
+    top: 5%;
+    background-color: #F0A202;
     z-index: -1;
+}
+
+.header__page__list{
+    padding: 20px;
+    flex: 1.1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 64px;
+    list-style: none;
+    margin: auto;
+}
+
+.header__page__list li{
+    font-family: var(--neuton);
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    line-height: 20px;
+}
+
+.header__page__list a {
+    text-decoration: none;
+    color: #0B0C0C;
+    padding: 0 10px;
+    font-size: 18px;
+    font-family: var(--neuton);
+    letter-spacing: 0.5px;
+}
+
+.header__page__list a:hover{
+    color: #B50721;
+}
+
+.header__page__list a::after{
+    content: "";
+    position: absolute;
+    background-color: #B50721;
+    height: 3px;
+    width: 0%;
+    left: 0;
+    bottom: 1180px;
+    transition: 0.3s;
+}
+
+.header__page__list a:hover::after{
+    width: 100%;
 }
