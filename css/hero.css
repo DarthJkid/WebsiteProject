@@ -54,13 +54,13 @@
     font-size: 80px;
     font-weight: 600;
     font-family: var(--protest-revolution);
-    color: var(--third-color-blvck);
+    color: black;
 }
 
 .hero-content-info p{
     font-family: var(--annapurna);
     margin: 32px 0 0 32px;
-    color: var(--third-color-blvck);
+    color: black;
     font-size: 18px;
     font-weight: 400;
 }
@@ -78,7 +78,7 @@
     min-width: 212px;
     outline: none;
     border: none;
-    background-color: var(--third-color-blvck);
+    background-color: black;
     color: #ffff;
     cursor: pointer;
     font-weight: 500;
@@ -110,8 +110,8 @@
     min-width: 212px;
     outline: none;
     border: none;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
+    background-color: #B50721;
+    color: #F0A202;
     cursor: pointer;
     font-weight: 500;
     font-size: 18px;
@@ -127,7 +127,7 @@
     width: 350px;
 }
 
-.testimonials-slider{
+.card__container{
     margin: 0 40px;
     max-width: 1120px;
     width: 60%;

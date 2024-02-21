@@ -1,13 +1,18 @@
-var swiper = new Swiper(".testimonials-slider", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
+import Swiper from 'swiper';
+
+let swiperCards = new Swiper('.card__content', {
+  loop: true,
+  spaceBetween: 32,
+  grabCursor: true,
+  clickable: true,
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
