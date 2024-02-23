@@ -9,7 +9,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: white;
+    background-color: #F0A202;
 
     position: relative;
 }
@@ -29,7 +29,7 @@
     background-image: url("../assets/about_bg1.png");
 }
 
-.about-us__image-chef2{
+.about-us__image-sushi-clip-2{
     border-bottom: 8px solid #B50721;
     background-image: url("../assets/about_bg2.png");
 }
