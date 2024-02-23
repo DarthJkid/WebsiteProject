@@ -73,3 +73,30 @@
 .header__page__list a:hover::after{
     width: 100%;
 }
+
+.header__page__list li {
+    position: relative; /* Needed for absolute positioning of the pseudo-element */
+}
+  
+.header__page__list a {
+    display: block;
+    padding: 10px; /* Adjust padding as needed */
+    text-decoration: none; /* Remove underline from links */
+    color: #000; /* Adjust color as needed */
+}
+  
+.header__page__list li::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%; /* Start from the middle */
+    width: 0; /* Initial width */
+    height: 2px; /* Height of the line */
+    background-color: #000; /* Color of the line */
+    transition: width 0.3s ease, left 0.3s ease; /* Smooth transition for the line */
+}
+  
+.header__page__list li:hover::after {
+    width: 100%; /* Full width on hover */
+    left: 0; /* Start from the left */
+}

@@ -33,3 +33,8 @@
     border-bottom: 8px solid #B50721;
     background-image: url("../assets/about_bg2.png");
 }
+
+.about-us__description{
+    flex: 1;
+    display: flex;
+}
