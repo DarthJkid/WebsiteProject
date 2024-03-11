@@ -1,0 +1,43 @@
+.popular-section{
+    padding: 64px;
+    display: flex;
+    flex-direction: column;
+    background-color: #B50721;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    overflow: hidden;
+}
+
+.popular-food__title{
+    font-size: 56px;
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 600;
+    line-height: 78px;
+    color: #F0A202;
+    text-align: center;
+}
+.popular-food__filter{
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+    max-width: 100%;
+    gap: 24px;
+}
+
+.popular-food__filter-btn{
+    display: flex;
+    flex-direction: row;
+    padding: 10px 28px;
+    align-items: center;
+    font-family: "Neuton", serif;
+    color: #F0A202;
+    background-color: black;
+    border-radius: 46px;
+    border: none;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
