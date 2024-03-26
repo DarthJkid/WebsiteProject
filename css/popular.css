@@ -87,14 +87,6 @@
     text-decoration: none;
 }
 
-.popular-food__menu-button img{
-    width: 20px;
-    height: 20px;
-    margin-left: 21px;
-    align-items: center;
-    justify-content: right;
-}
-
 .popular-food__menu-button:hover{
     background-color: #F0A202;
     transition: all 0.3s ease;
