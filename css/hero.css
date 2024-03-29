@@ -139,9 +139,10 @@
     align-items: center;
     font-family: "Neuton", serif;
 }
-.order-button__icon{
-    display: flex;
-    padding: 3px;
+
+.hero-content__order-button:hover{
+    background-color: #B50721;
+    transition: all 0.3s ease;
 }
 
 .hero-content__locations-button{
@@ -161,9 +162,10 @@
     font-family: "Neuton", serif;
 }
 
-.locations-button_icon{
-    display: flex;
-    flex-direction: row;
+.hero-content__locations-button:hover{
+    background-color: #B50721;
+    color: #fff;
+    transition: all 0.3s ease;
 }
 
 .hero-content__menu-button{
@@ -180,6 +182,11 @@
     line-height: 23px;
     align-items: center;
     font-family: "Neuton", serif;
+}
+
+.hero-content__menu-button:hover{
+    background-color: black;
+    transition: all 0.3s ease;
 }
 
 .customer-image img{
