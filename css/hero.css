@@ -140,6 +140,11 @@
     font-family: "Neuton", serif;
 }
 
+.hero-content__order-button a{
+    text-decoration: none;
+    color: #ffff;
+}
+
 .hero-content__order-button:hover{
     background-color: #B50721;
     transition: all 0.3s ease;
@@ -162,6 +167,11 @@
     font-family: "Neuton", serif;
 }
 
+.hero-content__locations-button a{
+    text-decoration: none;
+    color: black;
+}
+
 .hero-content__locations-button:hover{
     background-color: #B50721;
     color: #fff;
@@ -182,6 +192,11 @@
     line-height: 23px;
     align-items: center;
     font-family: "Neuton", serif;
+}
+
+.hero-content__menu-button a{
+    text-decoration: none;
+    color: #F0A202;
 }
 
 .hero-content__menu-button:hover{
