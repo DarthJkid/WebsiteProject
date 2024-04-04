@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "aos": "^2.3.4",
+    "node": "^18.20.1"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^5.0.4"
+  }
+}
