@@ -6,10 +6,48 @@
     <title>Document</title>
 </head>
 <body>
-    <section class="highlights">
+    <section class="header">
         <div class="menu-header">
             <h1>Sakana Shokudō</h1>
+            <p>The Best of the Best</p>
+            <form name="search">
+                <input type="text" class="input" name="txt" onmouseout="this.value = ''; this.blur();">
+            </form>
+            
+            <i class="fas fa-search"></i>
         </div>
+
+        <nav class="menu-navbar">
+            <ul>
+                <li>
+                    <button class="menu__menu-button">
+                        <a>All</a>
+                    </button>
+                </li>
+                <li>
+                    <button class="menu__menu-button">
+                        <a>Sushi</a>
+                    </button>
+                </li>
+                <li>
+                    <button class="menu__menu-button">
+                        <a>Tempura</a>
+                    </button>
+                </li>
+                <li>
+                    <button class="menu__menu-button">
+                        <a>Ramen</a>
+                    </button>
+                </li>
+                <li>
+                    <button class="menu__menu-button">
+                        <a>Udon</a>
+                    </button>
+                </li>
+            </ul>
+        </nav>
     </section>
+
+    <main class="menu-content"></main>
 </body>
 </html>
