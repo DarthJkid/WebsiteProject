@@ -4,50 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/menu.css">
 </head>
 <body>
     <section class="header">
-        <div class="menu-header">
-            <h1>Sakana Shokudō</h1>
-            <p>The Best of the Best</p>
-            <form name="search">
-                <input type="text" class="input" name="txt" onmouseout="this.value = ''; this.blur();">
-            </form>
-            
-            <i class="fas fa-search"></i>
-        </div>
-
-        <nav class="menu-navbar">
+        <nav class="main-navbar">
             <ul>
-                <li>
-                    <button class="menu__menu-button">
-                        <a>All</a>
-                    </button>
-                </li>
-                <li>
-                    <button class="menu__menu-button">
-                        <a>Sushi</a>
-                    </button>
-                </li>
-                <li>
-                    <button class="menu__menu-button">
-                        <a>Tempura</a>
-                    </button>
-                </li>
-                <li>
-                    <button class="menu__menu-button">
-                        <a>Ramen</a>
-                    </button>
-                </li>
-                <li>
-                    <button class="menu__menu-button">
-                        <a>Udon</a>
-                    </button>
-                </li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../html/about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
             </ul>
         </nav>
+
+        <div class="menu-header">
+            <h1><a href="../index.html">Sakana Shokudō</a></h1>
+            <h3>&mdash; MENU &mdash; </h3>
+            <p>The Best of the Best</p>
+        </div>
     </section>
 
-    <main class="menu-content"></main>
+    <main class="menu-content">
+        <section class="sushi-section">
+            <div class="section-title">
+                Sushi
+            </div>
+            <div class="sushi-main flex-between">
+                <article class="menu-item">
+                    <div class="menu-item__image-container">
+                        <img src="../assets/spicy-tuna-img.jpg" alt="" class="menu-item__image"></img>
+                    </div>
+                    <h2 class="menu-item__name">Nigiri Sushi</h2>
+                    <p class="menu-item__description">Google Chrome is a web browser developed by Google, released in 2008. Chrome is the world's most popular web browser today!</p>
+                    <p class="menu-item__price">£10.00</p>
+                    <button class="menu-item__order">
+                        <a class="menu-button__text">Add to Cart</a>
+                    </button>
+                </article>
+
+                <article class="menu-item">
+                    <div class="menu-item__image-container">
+                        <img src="../assets/spicy-tuna-img.jpg" alt="" class="menu-item__image"></img>
+                    </div>
+                    <h2 class="menu-item__name">Spicy Tuna</h2>
+                    <p class="menu-item__description">Google Chrome is a web browser developed by Google, released in 2008. Chrome is the world's most popular web browser today!</p>
+                    <p class="menu-item__price">£10.00</p>
+                    <button class="menu-item__order">
+                        <a class="menu-button__text">Add to Cart</a>
+                    </button>
+                </article>
+
+                <article class="menu-item">
+                    <div class="menu-item__image-container">
+                        <img src="../assets/spicy-tuna-img.jpg" alt="" class="menu-item__image"></img>
+                    </div>
+                    <h2 class="menu-item__name">Salmon Roe</h2>
+                    <p class="menu-item__description">Google Chrome is a web browser developed by Google, released in 2008. Chrome is the world's most popular web browser today!</p>
+                    <p class="menu-item__price">£10.00</p>
+                    <button class="menu-item__order">
+                        <a class="menu-button__text">Add to Cart</a>
+                    </button>
+                </article>
+            </div>
+        </section>
+
+        <section class="tempura-section">
+            <div class="section-title">
+                Sushi
+            </div>
+            <div class="sushi-main flex-between">
+                <article class="menu-item">
+                    <div class="menu-item__image-container">
+                        <img src="../assets/spicy-tuna-img.jpg" alt="" class="menu-item__image"></img>
+                    </div>
+                    <h2 class="menu-item__name">Nigiri Sushi</h2>
+                    <p class="menu-item__description">Google Chrome is a web browser developed by Google, released in 2008. Chrome is the world's most popular web browser today!</p>
+                    <p class="menu-item__price">£10.00</p>
+                    <button class="menu-item__order">
+                        <a class="menu-button__text">Add to Cart</a>
+                    </button>
+                </article>
+
+                <article class="menu-item">
+                    <div class="menu-item__image-container">
+                        <img src="../assets/spicy-tuna-img.jpg" alt="" class="menu-item__image"></img>
+                    </div>
+                    <h2 class="menu-item__name">Spicy Tuna</h2>
+                    <p class="menu-item__description">Google Chrome is a web browser developed by Google, released in 2008. Chrome is the world's most popular web browser today!</p>
+                    <p class="menu-item__price">£10.00</p>
+                    <button class="menu-item__order">
+                        <a class="menu-button__text">Add to Cart</a>
+                    </button>
+                </article>
+
+                <article class="menu-item">
+                    <div class="menu-item__image-container">
+                        <img src="../assets/spicy-tuna-img.jpg" alt="" class="menu-item__image"></img>
+                    </div>
+                    <h2 class="menu-item__name">Salmon Roe</h2>
+                    <p class="menu-item__description">Google Chrome is a web browser developed by Google, released in 2008. Chrome is the world's most popular web browser today!</p>
+                    <p class="menu-item__price">£10.00</p>
+                    <button class="menu-item__order">
+                        <a class="menu-button__text">Add to Cart</a>
+                    </button>
+                </article>
+            </div>
+        </section>
+
+        <section class="rice-section"></section>
+
+    </main>
+    
 </body>
 </html>
