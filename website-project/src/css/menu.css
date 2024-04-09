@@ -154,15 +154,12 @@
     color: black;
 }
 
-.sushi-section
-.tempura-section
-{
+.sushi-section{
     background-color: #F0A202;
 
 }
 
-.sushi-main
-.tempura-main{
+.sushi-main{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -173,7 +170,8 @@
 
 .section-title{
     font-family: "Protest Revolution" , serif;
-    color: black;
+    color: #F0A202;
+    background-color: #B50721;
     font-size: 2rem;
     text-align: center;
     font-weight: 500;
@@ -248,4 +246,131 @@
 .menu-item__order:hover {
     background-color: #b50721;
     transition: all 0.5s ease;
+}
+
+
+.tempura-section{
+    background-color: #F0A202;
+
+}
+
+.tempura-main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    gap: 30px;
+}
+
+.rice-main{
+    background-color: #F0A202;
+}
+
+.rice-main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    gap: 30px;
+}
+
+.cartTab{
+    width: 400px;
+    background-color: black;
+    color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    inset: 0 0 0 auto;
+    display: none;
+    grid-template-rows: 30px;
+}
+
+.cartTab h1{
+    font-family: "Protest Revolution" , serif;
+    color: #F0A202;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 500;
+    padding: 20px;
+    margin: 0;
+}
+
+.cartTab .cart-buttons{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.cartTab .cart-buttons button{
+    border: none;
+    outline: none;
+    background-color: #F0A202;
+    color: black;
+    font-family: "Protest Revolution" , serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cart-buttons{
+    display: flex;
+    gap: 6px;
+}
+
+.cart-buttons .close-cart{
+    color: #B50721;
+}
+
+.clear-cart{
+    border: none;
+    outline: none;
+    width: 100%;
+    background-color: #B50721;
+    color: #F0A202;
+    font-family: "Protest Revolution" , serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 6px;
+}
+
+.listCart {
+    background-color: #000; /* Light grey background */
+    padding: 10px;
+    max-height: 300px; /* Or whatever fits your design */
+    overflow-y: auto; /* Enables scroll if content exceeds max height */
+    border-radius: 5px; /* Optional: adds rounded corners */
+}
+
+.cart-item {
+    font-size: 18px;
+    font-family: "reem kufi fun" , sans-serif;
+    padding: 5px 0; /* Adds space above and below each item */
+    border-bottom: 1px solid #ccc; /* Adds a separator line */
+}
+
+.cart-total {
+    font-family: "Reem Kufi Fun" , sans-serif;
+    font-weight: bold;
+    padding-top: 10px; /* Adds space between items and total */
+}
+
+.item-name, .item-quantity, .item-price {
+    margin-right: 10px; /* Adds spacing between elements */
+}
+
+.item-price {
+    float: right; /* Aligns the price to the right */
+    align-items: right;
+    font-weight: bold;
+}
+
+/* Clear float */
+.cart-item::after {
+    content: "";
+    display: table;
+    clear: both;
 }
