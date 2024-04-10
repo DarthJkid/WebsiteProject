@@ -8,17 +8,17 @@ else {
 */
 
 document.querySelector('.shopping-cart').addEventListener('click', () => {
-  const cartTab = document.querySelector('.cartTab');
-  if (cartTab.style.display === 'block') {
-      cartTab.style.display = 'none'; // Close cart
-  } else {
-      cartTab.style.display = 'block'; // Show cart
-  }
+    const cartTab = document.querySelector('.cartTab');
+    if (cartTab.style.display === 'block') {
+        cartTab.style.display = 'none'; // Close cart
+    } else {
+        cartTab.style.display = 'block'; // Show cart
+    }
 });
 
-document.querySelector('.close-cart').addEventListener('click', () => {
-  document.querySelector('.cartTab').style.display = 'none'; // Hide cart
-});
+  document.querySelector('.close-cart').addEventListener('click', () => {
+    document.querySelector('.cartTab').style.display = 'none'; // Hide cart
+  });
 
 
 let cart = loadCartFromSessionStorage() || []; // Load existing cart or initialize empty cart
