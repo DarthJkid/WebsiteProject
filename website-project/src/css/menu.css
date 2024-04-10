@@ -286,7 +286,8 @@
     bottom: 0;
     inset: 0 0 0 auto;
     display: none;
-    grid-template-rows: 30px;
+    max-height: 20vh;
+    grid-template-rows: 40px;
 }
 
 .cartTab h1{
@@ -340,7 +341,7 @@
 .listCart {
     background-color: #000; /* Light grey background */
     padding: 10px;
-    max-height: 300px; /* Or whatever fits your design */
+    max-height: 200px; /* Or whatever fits your design */
     overflow-y: auto; /* Enables scroll if content exceeds max height */
     border-radius: 5px; /* Optional: adds rounded corners */
 }
