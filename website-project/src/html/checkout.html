@@ -69,7 +69,7 @@
                 // Add item's cost to total
                 total += item.price * item.quantity;
             });
-            const deliveryCharge = 2.95;
+            const deliveryCharge = 5.00;
             // Display total cost
             const totalElement = document.getElementById('cartTotal');
             totalElement.textContent = `Total: £${total.toFixed(2)} + £${deliveryCharge.toFixed(2)} Delivery Fee = £${(total + deliveryCharge).toFixed(2)}`;
