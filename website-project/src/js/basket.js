@@ -1,207 +1,127 @@
-/*
-if (document.readyState == 'loading') {
-    document.addEventListener('DOMContentLoaded', ready);
-}
-else {
-    ready();
-}
-*/
-
 document.querySelector('.shopping-cart').addEventListener('click', () => {
-    const cartTab = document.querySelector('.cartTab');
-    if (cartTab.style.display === 'block') {
-        cartTab.style.display = 'none'; // Close cart
-    } else {
-        cartTab.style.display = 'block'; // Show cart
-    }
+  const cartTab = document.querySelector('.cartTab');
+  if (cartTab.style.display === 'block') {
+      cartTab.style.display = 'none'; // Close cart
+  } else {
+      cartTab.style.display = 'block'; // Show cart
+  }
 });
 
-  document.querySelector('.close-cart').addEventListener('click', () => {
-    document.querySelector('.cartTab').style.display = 'none'; // Hide cart
-  });
+document.querySelector('.close-cart').addEventListener('click', () => {
+  document.querySelector('.cartTab').style.display = 'none'; // Hide cart
+});
 
+let cart = loadCartFromSessionStorage(); // Load existing cart
 
-let cart = loadCartFromSessionStorage() || []; // Load existing cart or initialize empty cart
-
+// Function to add items to cart
 document.querySelectorAll('.menu-item__order').forEach(button => {
-  button.addEventListener('click', function() {
-    const itemElement = this.closest('.menu-item');
-    const name = itemElement.querySelector('.menu-item__name').textContent;
-    const price = parseFloat(itemElement.querySelector('.menu-item__price').textContent.replace('£', ''));
-    
-    const existingItem = cart.find(item => item.name === name);
-        if (existingItem) {
-          existingItem.quantity++;
-        } else {
-          cart.push({ name, price, quantity: 1 });
-        }
-        
-        updateCart();
-      });
-    });
+button.addEventListener('click', function() {
+  const itemElement = this.closest('.menu-item');
+  const name = itemElement.querySelector('.menu-item__name').textContent;
+  const price = parseFloat(itemElement.querySelector('.menu-item__price').textContent.replace('£', ''));
 
-    function updateCart() {
-      const listCart = document.querySelector('.listCart');
-      listCart.innerHTML = ''; // Clear current cart contents
-      
-      let total = 0;
-      cart.forEach((item, index) => { // Fix: Add 'index' as an argument
-        const itemElement = document.createElement('div');
-        itemElement.classList.add('cart-item'); //Add class to style item
+  const existingItem = cart.find(item => item.name === name);
+  if (existingItem) {
+    existingItem.quantity++;
+  } else {
+    cart.push({ name, price, quantity: 1 });
+  }
 
-        // Create and append the name span
-        const nameSpan = document.createElement('span');
-        nameSpan.textContent = item.name;
-        nameSpan.classList.add('item-name');
-        itemElement.appendChild(nameSpan);
+  updateCart();
+});
+});
 
-         // Remove button
-         const removeBtn = document.createElement('button');
-         removeBtn.textContent = 'X';
-         removeBtn.classList.add('remove-item');
-         removeBtn.onclick = () => removeFromCart(index);
-         itemElement.appendChild(removeBtn);
+// Update cart display
+function updateCart() {
+const listCart = document.querySelector('.listCart');
+listCart.innerHTML = ''; // Clear current cart contents
 
-         // Minus button
-         const minusBtn = document.createElement('button');
-         minusBtn.textContent = '-';
-         minusBtn.classList.add('change-quantity');
-         minusBtn.onclick = () => updateItemQuantity(index, -1);
-         itemElement.appendChild(minusBtn);
+let total = 0;
+cart.forEach((item, index) => {
+  const itemElement = document.createElement('div');
+  itemElement.classList.add('cart-item');
 
-         // Quantity
-         const quantitySpan = document.createElement('span');
-         quantitySpan.textContent = `x ${item.quantity}`;
-         quantitySpan.classList.add('item-quantity');
-         itemElement.appendChild(quantitySpan);
+  // Item name
+  const nameSpan = document.createElement('span');
+  nameSpan.textContent = item.name;
+  nameSpan.classList.add('item-name');
+  itemElement.appendChild(nameSpan);
 
-         // Plus button
-         const plusBtn = document.createElement('button');
-         plusBtn.textContent = '+';
-         plusBtn.classList.add('change-quantity');
-         plusBtn.onclick = () => updateItemQuantity(index, 1);
-         itemElement.appendChild(plusBtn);
+  // Plus button
+  const plusBtn = document.createElement('button');
+  plusBtn.textContent = '+';
+  plusBtn.addEventListener('click', () => updateItemQuantity(index, 1));
+  itemElement.appendChild(plusBtn);
 
-        // Create and append the price span
-        const priceSpan = document.createElement('span');
-        priceSpan.textContent = ` - £${(item.price * item.quantity).toFixed(2)}`;
-        priceSpan.classList.add('item-price');
-        itemElement.appendChild(priceSpan);
+  // Quantity display
+  const quantitySpan = document.createElement('span');
+  quantitySpan.textContent = ` x ${item.quantity} `;
+  itemElement.appendChild(quantitySpan);
 
-        itemElement.textContent = `${item.name} - £${item.price} x ${item.quantity}`;
-        listCart.appendChild(itemElement);
-        
-        total += item.price * item.quantity;
+  // Minus button
+  const minusBtn = document.createElement('button');
+  minusBtn.textContent = '-';
+  minusBtn.addEventListener('click', () => updateItemQuantity(index, -1));
+  itemElement.appendChild(minusBtn);
 
-        document.querySelectorAll('.item-quantity').forEach(input => {
-            input.addEventListener('change', function() {
-              const itemIndex = this.getAttribute('data-index');
-              const newQuantity = parseInt(this.value);
-              if (newQuantity > 0) {
-                cart[itemIndex].quantity = newQuantity;
-              } else {
-                cart.splice(itemIndex, 1); // Remove the item if quantity is less than 1
-              }
-              updateCart();
-            });
-          });
-        
-          document.querySelectorAll('.remove-item').forEach(button => {
-            button.addEventListener('click', function() {
-              const itemIndex = this.getAttribute('data-index');
-              cart.splice(itemIndex, 1); // Remove the item from the cart
-              updateCart();
-            });
-          });
-      });
-      
-      const totalElement = document.createElement('div');
-      totalElement.classList.add('cart-total'); // Add class for styling
-      totalElement.textContent = `Total: £${total.toFixed(2)}`;
-      listCart.appendChild(totalElement);
-      
-      // Show cart if not already visible
-      document.querySelector('.cartTab').style.display = 'block';
-    }
+  // Price
+  const priceSpan = document.createElement('span');
+  priceSpan.textContent = ` = £${(item.price * item.quantity).toFixed(2)}`;
+  itemElement.appendChild(priceSpan);
 
-    document.querySelector('.clear-cart').addEventListener('click', function() {
-        cart = []; // Clear the cart array
-        updateCart(); // Update the cart display
-      });
+  // Remove button
+  const removeBtn = document.createElement('button');
+  removeBtn.textContent = 'X';
+  removeBtn.addEventListener('click', () => removeFromCart(index));
+  itemElement.appendChild(removeBtn);
 
+  listCart.appendChild(itemElement);
 
-    document.querySelector('.checkout').addEventListener('click', () => {
-        // Example form structure, add more fields as needed
-        const formHtml = `
-          <form id="checkoutForm">
-            <input type="text" name="firstname" placeholder="First Name" required />
-            <input type="text" name="address" placeholder="Address" required />
-            <!-- Add additional fields for payment -->
-            <button type="submit">Submit Order</button>
-          </form>
-        `;
-        
-        document.querySelector('.cartTab').innerHTML = formHtml;
-        
-        document.querySelector('#checkoutForm').addEventListener('submit', function(e) {
-          e.preventDefault(); // Prevent form from submitting traditionally
-          
-          const firstname = this.firstname.value;
-          alert(`Thank you ${firstname}, your order is successful.`);
-          
-          // Here you would typically send the order to your server
-          // For demonstration, we'll just clear the cart and hide it
-          cart = [];
-          document.querySelector('.cartTab').style.display = 'none';
-        });
-      });
+  total += item.price * item.quantity;
+});
 
-    function removeFromCart(index) {
-        cart.splice(index, 1); // Remove the item at the specified index
-        updateCart(); // Update the cart display
-        saveCartToSessionStorage(cart); // Save updated cart to Session Storage
-    }
+const totalElement = document.createElement('div');
+totalElement.textContent = `Total: £${total.toFixed(2)}`;
+listCart.appendChild(totalElement);
 
-    function updateItemQuantity(index, change) {
-        const newQuantity = cart[index].quantity + change;
-        if (newQuantity > 0) {
-            cart[index].quantity = newQuantity; // Update quantity if it's more than 0
-        } else {
-            cart.splice(index, 1); // Remove the item if the new quantity would be 0 or less
-        }
-        updateCart(); // Update the cart display
-        saveCartToSessionStorage(cart); // Save updated cart to Session Storage
-    }
+// Optionally show cart
+document.querySelector('.cartTab').style.display = 'block';
+}
 
-    function saveCartToSessionStorage(cart) {
-      sessionStorage.setItem('cart', JSON.stringify(cart));
-    }
+document.querySelector('.clear-cart').addEventListener('click', () => {
+cart = []; // Clear the cart array
+updateCart(); // Update the cart display
+});
+
+// Checkout button functionality
+document.querySelector('.checkout').addEventListener('click', () => {
+saveCartToSessionStorage(); // Ensure latest cart is saved before navigating
+window.location.href = 'checkout.html'; // Redirect to checkout page
+});
+
+function removeFromCart(index) {
+  cart.splice(index, 1); // Remove the item
+  updateCart(); // Update the cart display
+  saveCartToSessionStorage(); // Save updated cart
+}
+
+function updateItemQuantity(index, change) {
+  cart[index].quantity += change;
+  if (cart[index].quantity <= 0) {
+    cart.splice(index, 1); // Remove item if quantity is 0 or less
+  }
+  updateCart(); // Update the cart display
+  saveCartToSessionStorage(); // Save updated cart
+}
+
+function saveCartToSessionStorage() {
+sessionStorage.setItem('cart', JSON.stringify(cart));
+}
 
 function loadCartFromSessionStorage() {
-  const storedCart = sessionStorage.getItem('cart');
-  return storedCart ? JSON.parse(storedCart) : [];
-}
-// Load existing cart
-
-function addToCart(item) {
-    // Check if item already exists in cart
-    const existingItem = cart.find(cartItem => cartItem.name === item.name);
-    if (existingItem) {
-        existingItem.quantity += 1; // Update quantity
-    } else {
-        item.quantity = 1; // Set initial quantity
-        cart.push(item); // Add new item to cart
-    }
-    saveCartToSessionStorage(cart); // Save updated cart to Session Storage
+const storedCart = sessionStorage.getItem('cart');
+return storedCart ? JSON.parse(storedCart) : [];
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const checkoutCart = loadCartFromSessionStorage();
-  // Display the cart items on the checkout page
-  displayCheckoutCart(checkoutCart);
-});
-
-function clearCart() {
-  cart = []; // Clear the cart array
-  saveCartToSessionStorage(cart); // Save the empty cart to Session Storage
-}
+// Ensure the checkout page correctly loads and displays cart data
+// (The `displayCheckoutCart` functionality should be defined in your checkout page's script)
