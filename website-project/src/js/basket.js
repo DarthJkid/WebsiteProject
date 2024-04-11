@@ -11,7 +11,7 @@ document.querySelector('.close-cart').addEventListener('click', () => {
   document.querySelector('.cartTab').style.display = 'none'; // Hide cart
 });
 
-let cart = loadCartFromSessionStorage(); // Load existing cart
+let cart = loadCartFromLocalStorage();// Load existing cart
 
 // Function to add items to cart
 document.querySelectorAll('.menu-item__order').forEach(button => {
@@ -91,18 +91,20 @@ document.querySelector('.cartTab').style.display = 'block';
 document.querySelector('.clear-cart').addEventListener('click', () => {
 cart = []; // Clear the cart array
 updateCart(); // Update the cart display
+saveCartToLocalStorage()
+
 });
 
 // Checkout button functionality
 document.querySelector('.checkout').addEventListener('click', () => {
-saveCartToSessionStorage(); // Ensure latest cart is saved before navigating
+  saveCartToLocalStorage(); // Ensure latest cart is saved before navigating
 window.location.href = 'checkout.html'; // Redirect to checkout page
 });
 
 function removeFromCart(index) {
   cart.splice(index, 1); // Remove the item
   updateCart(); // Update the cart display
-  saveCartToSessionStorage(); // Save updated cart
+  saveCartToLocalStorage(); // Save updated cart
 }
 
 function updateItemQuantity(index, change) {
@@ -111,17 +113,18 @@ function updateItemQuantity(index, change) {
     cart.splice(index, 1); // Remove item if quantity is 0 or less
   }
   updateCart(); // Update the cart display
-  saveCartToSessionStorage(); // Save updated cart
+  saveCartToLocalStorage(); // Save updated cart
 }
 
-function saveCartToSessionStorage() {
-sessionStorage.setItem('cart', JSON.stringify(cart));
+function saveCartToLocalStorage() {
+localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-function loadCartFromSessionStorage() {
-const storedCart = sessionStorage.getItem('cart');
-return storedCart ? JSON.parse(storedCart) : [];
+function loadCartFromLocalStorage() {
+  const storedCart = localStorage.getItem('cart');
+  return storedCart ? JSON.parse(storedCart) : [];
 }
 
-// Ensure the checkout page correctly loads and displays cart data
-// (The `displayCheckoutCart` functionality should be defined in your checkout page's script)
+document.addEventListener('DOMContentLoaded', () => {
+  updateCart();
+});
