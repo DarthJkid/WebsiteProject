@@ -71,11 +71,9 @@
             });
             // Display total cost
             const deliveryCharge = 1.99;
-            const totalWithDelivery = total + deliveryCharge;
-
-            // Display total cost including delivery charge
+            // Display total cost
             const totalElement = document.getElementById('cartTotal');
-            totalElement.textContent = `Total: £${total.toFixed(2)} + £${deliveryCharge.toFixed(2)} Delivery Fee = £${totalWithDelivery.toFixed(2)}`;
+            totalElement.textContent = `Total: £${total.toFixed(2)} + £${deliveryCharge.toFixed(2)} Delivery Fee = £${(total + deliveryCharge).toFixed(2)}`;
           }
     
         function updateItemQuantity(index, change) {
@@ -232,12 +230,10 @@
                 </div>
                 
               </div>
-              <div id="cartTotal"></div>
-    </main>
+              <div id="cartTotal">
 
-    <footer>
-    
-    </footer>
+              </div>
+    </main>
 </body>
 
 <script>
