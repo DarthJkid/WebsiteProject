@@ -1,12 +1,13 @@
 .footer {
     width: 100%;
-    padding: 20px 40px;
-    background: var(--color-white);
+    padding: 0;
+    background: #fff;
   
     flex-wrap: wrap;
     gap: 20px;
   
     overflow: hidden;
+    background-color: black;
   }
   
   .footer__logo {
@@ -15,12 +16,9 @@
     font-family: "Playfair Display", sans-serif;
     text-transform: uppercase;
     color: #F0A202;
-  
+    display: flex;
+    justify-content: center;
     cursor: pointer;
-  }
-  
-  .footer__logo span {
-    color: var(--primary-color)
   }
   
   .footer ul {
@@ -30,11 +28,9 @@
     flex-wrap: wrap;
     flex-direction: row;
     gap: 64px;
+    justify-content: center;
   }
   
-  .footer ul:last-child {
-    gap: 32px;
-  }
   
   .footer__nav li {
     font-size: 16px;
@@ -72,18 +68,24 @@
     transition: all 0.3s ease-in;
 }
 
-
-.footer__social li {
-    width: 42px;
-    height: 42px;
-  
-    background-color: #F0A202;
-    border-radius: 100%;
+.social-icons{
+  display: flex;
+  justify-content: center;
 }
-  
-.footer__social li img {
-    width: 45%;
-    height: 45%;
-  
-    object-fit: contain;
+
+.social-icons a{
+  text-decoration: none;
+  color: #F0A202;
+  font-size: 26px;
+  margin: 0 10px;
+}
+
+.footerBottom{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: #0B0C0C;
+  color: #F0A202;
+  font-family: 'Reem Kufi Fun', sans-serif;
 }
