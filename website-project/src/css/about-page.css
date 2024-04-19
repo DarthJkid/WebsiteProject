@@ -1,0 +1,138 @@
+  
+    .about-navbar{
+        background: #B50721;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-navbar h2{
+        font-family: 'Protest Revolution', sans-serif;
+    }
+
+    .about-navbar h2 a{
+        text-decoration: none;
+        color: #F0A202;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .about-navbar ul{
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        gap: 40px;
+    }
+
+    .about-navbar ul li{
+        justify-content: center;
+    }
+
+    .about-navbar ul li a{
+        text-decoration: none;
+        color: #F0A202;;
+        display: flex;
+        font-family: 'Reem Kufi Fun', sans-serif;
+        flex-direction: row;
+        font-weight: 500;
+        font-size: 1.2rem;
+    }
+
+    .about-navbar ul li a:hover{
+        text-decoration: underline;
+    }
+    
+    .about-body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #F0A202;
+      margin: 0;
+      padding: 0;
+    }
+
+    .about-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: black;
+      margin: 10px auto;
+      padding: 5px 30px;
+      width: 800px;
+      color: #F0A202;
+    }
+
+    .about-hr {
+      display: flex;
+      align-items: center;
+    }
+
+    about-hr hr {
+      width: 30px;
+      height: 1px;
+      background: black;
+      margin: 0 15px;
+    }
+
+    .about-wrapper h2 {
+      font-size: 25px;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-family: 'Protest Revolution', sans-serif;
+    }
+
+    .about-wrapper div p {
+      font-size: 20px;
+      font-weight: 500px;
+      font-style: italic;
+      font-family: 'Neuton', serif;
+      margin-top: 0;
+    }
+
+    .about-wrapper div img {
+      width: 150px;
+      filter: drop-shadow(0 10px 5px black);
+    }
+
+    .about-wrapper p {
+      text-align: justify;
+    }
+
+    .cooks {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .unit {
+      margin: 25px;
+      width: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .unit img {
+      border-radius: 100px;
+      width: 150px;
+      height: 150px;
+      margin-bottom: 10px;
+    }
+
+    .unit p {
+      text-align: left;
+      margin: 2px;
+    }
+
+    .unit p:first-of-type {
+      font-weight: bolder;
+      margin-bottom: 5px;
+    }
+
+    @media screen and (max-width:820px) {
+      .wrapper {
+        width: 80%;
+        padding: 5px 30px;
+      }
+    }

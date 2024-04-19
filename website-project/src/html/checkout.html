@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My Website</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header class="checkout-header">
+      <div class="checkout-title">
+        <h1><a href="../index.html">Sakana Shokudō</a></h1>
+      </div>
+      <nav class="nav-checkout">
+        <ul>
+            <li><a href="../html/menu.html">Menu</a></li>
+            <li><a href="../html/about.html">About</a></li>
+            <li><a href="../html/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <main>
+      <script>
+        let cart = loadCartFromLocalStorage(); // Initialize cart
+    
+        function saveCartToLocalStorage() {
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+    
+        function loadCartFromLocalStorage() {
+            const storedCart = localStorage.getItem('cart');
+            return storedCart ? JSON.parse(storedCart) : [];
+        }
+    
+        function displayCheckoutCart() {
+            const checkoutItemsDiv = document.getElementById('checkoutItems');
+            checkoutItemsDiv.innerHTML = ''; // Clear existing items
+    
+            let total = 0; // Initialize total cost
+    
+            cart.forEach((item, index) => {
+                const itemElement = document.createElement('div');
+                
+                // Item details
+                const itemText = document.createElement('span');
+                itemText.textContent = `${item.name} x ${item.quantity} - £${(item.price * item.quantity).toFixed(2)}`;
+                itemElement.appendChild(itemText);
+    
+                // Plus button
+                const plusBtn = document.createElement('button');
+                plusBtn.textContent = '+';
+                plusBtn.onclick = () => updateItemQuantity(index, 1);
+                itemElement.appendChild(plusBtn);
+    
+                // Minus button
+                const minusBtn = document.createElement('button');
+                minusBtn.textContent = '—';
+                minusBtn.onclick = () => updateItemQuantity(index, -1);
+                itemElement.appendChild(minusBtn);
+    
+                // Remove button
+                const removeBtn = document.createElement('button');
+                removeBtn.textContent = 'X';
+                removeBtn.onclick = () => removeFromCart(index);
+                itemElement.appendChild(removeBtn);
+    
+                checkoutItemsDiv.appendChild(itemElement);
+    
+                // Add item's cost to total
+                total += item.price * item.quantity;
+            });
+            // Display total cost
+            const deliveryCharge = 1.99;
+            // Display total cost
+            const totalElement = document.getElementById('cartTotal');
+            totalElement.textContent = `Total: £${total.toFixed(2)} + £${deliveryCharge.toFixed(2)} Delivery Fee = £${(total + deliveryCharge).toFixed(2)}`;
+          }
+    
+        function updateItemQuantity(index, change) {
+            const newQuantity = cart[index].quantity + change;
+            if (newQuantity > 0) {
+                cart[index].quantity = newQuantity;
+            } else {
+                cart.splice(index, 1); // Remove item if quantity is zero
+            }
+            saveCartToLocalStorage();
+            displayCheckoutCart(); // Recalculate and display the updated cart
+        }
+    
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            saveCartToLocalStorage();
+            displayCheckoutCart(); // Update the display after removal
+        }
+        
+
+        document.addEventListener('DOMContentLoaded', () => {
+            displayCheckoutCart();
+        });
+
+        document.querySelector('.purchase').addEventListener('click', (event) => {
+           // Save the latest cart to local storage
+          saveCartToLocalStorage();
+          // Redirect to receipt page with cart data as query string parameters
+          window.location.href = 'receipt.html';
+        });
+    </script>
+
+          <div id='form-wrapper'>
+            <form>
+          
+              <div id='header-checkout' class='text-center mb-3'>
+                <h1>Checkout</h1>
+              </div>
+          
+              <div class='text-center'>
+                <img src="../assets/icons8-paypal-48.png" alt="Paypal" class="payment-icons">
+                <img src="../assets/icons8-visa-48.png" alt="Visa" class="payment-icons">
+                <img src="../assets/icons8-mastercard-48.png" alt="mastercard" class="payment-icons">
+              </div>
+          
+                <hr>
+          
+                <div class='checkout-entry'>
+                  <label class='mb-1' for='firstName'>First Name</label>
+                  <input class='form-control mb-1' id='firstName' type='text' placeholder=''>
+                </div>
+          
+                <div class='checkout-entry'>
+                  <label class='mb-1' for='lastName'>Last Name</label>
+                  <input id='lastName' type='text' class='form-control' placeholder=''>
+                </div>
+          
+                <div class='checkout-entry'>
+                  <label class='mb-1'>Street</label>
+                  <input class='form-control' type='text' id='street1' placeholder=''>
+                </div>
+          
+                <div class='checkout-entry'>
+                  <label class='mb-1' for='city'>City</label>
+                  <input type='text' id='city' class='form-control' placeholder=''>
+                </div>
+          
+                <div class='checkout-entry'>
+                  <div class='col-md-8'>
+                    <label class='mb-1' for='state'>State</label>
+                    <input id='state' class='form-control' placeholder=''>
+                  </div>
+                  <div class='col-md-4'>
+          
+                    <label class='mb-1' for='zip'>Post Code</label>
+                    <input type='text' id='zip' class='form-control' placeholder=''>
+                  </div>
+                </div>
+          
+                  <hr class='mb-1'>
+          
+                  <div class='checkout-entry'>
+                    <label class='mb-1' for='nameOnCard'>Name on card</label>
+                    <input class='form-control' id='nameOnCard' placeholder=''>
+                  </div>
+          
+                  <div class='checkout-entry'>
+                    <label class='mb-1' for='cardNum'>Card number</label>
+                    <input class='form-control' id='cardNum' placeholder>
+                  </div>
+          
+                  <div class='checkout-entry'>
+                    <div class='col'>
+                      <label class='mb-0' for='expMonth'>Expiration Month</label>
+                      <select class='form-control' id='expMonth'>
+                        <option value='01'>January</option>
+                        <option value='02'>February</option>
+                        <option value='03'>March</option>
+                        <option value='04'>April</option>
+                        <option value='05'>May</option>
+                        <option value='06'>June</option>
+                        <option value='07'>July</option>
+                        <option value='08'>August</option>
+                        <option value='09'>September</option>
+                        <option value='10'>October</option>
+                        <option value='11'>November</option>
+                        <option value='12'>December</option>
+                      </select>
+                    </div>
+                    <div class='col'>
+                      <label class='mb-0' for='expYear'>Exp Year</label>
+                      <select class='form-control' id='expYear'>
+                        <option value='2023'>2024</option>
+                        <option value='2024'>2024</option>
+                        <option value='2025'>2025</option>
+                        <option value='2026'>2026</option>
+                        <option value='2027'>2027</option>
+                        <option value='2028'>2028</option>
+                        <option value='2029'>2029</option>
+                        <option value='2030'>2030</option>
+                        <option value='2031'>2031</option>
+                        <option value='2032'>2032</option>
+                        <option value='2033'>2033</option>
+                        <option value='2034'>2034</option>
+                        <option value='2035'>2035</option>
+                        <option value='2036'>2036</option>
+                        <option value='2037'>2037</option>
+                        <option value='2038'>2038</option>
+                        <option value='2039'>2039</option>
+                        <option value='2040'>2040</option>
+                        <option value='2041'>2041</option>
+                        <option value='2042'>2042</option>
+                        <option value='2043'>2043</option>
+                        <option value='2044'>2044</option>
+                        <option value='2045'>2045</option>
+                        <option value='2046'>2046</option>
+                        <option value='2047'>2047</option>
+                        <option value='2048'>2048</option>
+                        <option value='2049'>2049</option>
+                        <option value='2050'>2050</option>
+                      </select>
+                    </div>
+                    <div class='col' id="ccv">
+                      <label class='mb-0' for='ccv'>CCV</label>
+                      <input placeholder='* * *' class='form-control' id='ccv'>
+                    </div>
+                  </div>
+                  <button id="purchaseButton" class='purchase' type='submit'>Purchase<img src="../assets/icons8-lock-48.png" class="lock-img"></img></button>
+                </form>
+              </div>
+
+              <div id="checkoutItems">
+                <div id="cart-item">
+                </div>
+                
+              </div>
+              <div id="cartTotal">
+
+              </div>
+    </main>
+</body>
+
+<script>
+  document.getElementById('purchaseButton').addEventListener('click', () => {
+      event.preventDefault(); // This stops the form from submitting normally
+      // Save the latest cart to local storage
+      saveCartToLocalStorage();
+
+      // Redirect to receipt page
+      window.location.href = 'receipt.html';
+  });
+</script>
+</html>

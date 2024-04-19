@@ -1,0 +1,107 @@
+.header__nav{
+    display: flex;
+    overflow: hidden;
+}
+
+.header__logo{
+    flex: 1;
+    display: flex;
+    position: relative;
+    padding: 20px;
+    margin: 0;
+}
+
+.header__logo h4{
+    font-family: "Protest Revolution", sans-serif;
+    font-size: 28px;
+    text-transform: uppercase;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.header__logo-overlay{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    top: 5%;
+    background-color: #B50721;
+    z-index: -1;
+    flex: 1;
+    display: flex;
+}
+
+.header__page__list{
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 54px;
+    list-style: none;
+    margin: 0;
+    background-color: #F0A202;
+}
+
+.header__page__list li{
+    font-family: "Neuton", serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    line-height: 20px;
+}
+
+.header__page__list a {
+    text-decoration: none;
+    color: #0B0C0C;
+    padding: 0 10px;
+    font-size: 18px;
+    font-family: "Neuton", serif;
+    letter-spacing: 0.5px;
+}
+
+.header__page__list a:hover{
+    color: #B50721;
+}
+
+.header__page__list a::after{
+    content: "";
+    position: absolute;
+    background-color: #B50721;
+    height: 3px;
+    width: 0%;
+    left: 0;
+    bottom: 1180px;
+    transition: 0.3s;
+}
+
+.header__page__list a:hover::after{
+    width: 100%;
+}
+
+.header__page__list li {
+    position: relative; /* Needed for absolute positioning of the pseudo-element */
+}
+  
+.header__page__list a {
+    display: block;
+    padding: 10px; /* Adjust padding as needed */
+    text-decoration: none; /* Remove underline from links */
+    color: #000; /* Adjust color as needed */
+}
+  
+.header__page__list li::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%; /* Start from the middle */
+    width: 0; /* Initial width */
+    height: 2px; /* Height of the line */
+    background-color: #000; /* Color of the line */
+    transition: width 0.3s ease, left 0.3s ease; /* Smooth transition for the line */
+}
+  
+.header__page__list li:hover::after {
+    width: 100%; /* Full width on hover */
+    left: 0; /* Start from the left */
+}
+

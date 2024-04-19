@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,200,300,500,600,700,900');
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&display=swap');
+
+.checkout-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #b50721;
+    color: #F0A202;
+    padding: 10px;
+    cursor: pointer;
+    font-family: 'Protest Revolution', sans-serif;
+}
+
+.checkout-title:hover {
+  position: relative;
+}
+
+.checkout-title:hover::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #F0A202;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.checkout-title:hover::before {
+  transform: scaleX(1);
+}
+
+.checkout-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #b50721;
+  color: #F0A202;
+  padding: 10px;
+  font-family: 'Protest Revolution', sans-serif;
+}
+
+.checkout-title a{
+  text-decoration: none;
+  color: #F0A202;
+}
+
+.checkout-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #b50721;
+  color: #F0A202;
+  padding: 10px;
+  font-family: 'Protest Revolution', sans-serif;
+}
+
+.nav-checkout{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.nav-checkout ul{
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    gap: 50px;
+}
+
+.nav-checkout a{
+    text-decoration: none;
+    color: #F0A202;
+    font-family: 'Reem Kufi Fun', sans-serif;
+    font-size: 20px;
+    gap: 30px;
+}
+
+.nav-checkout a:hover {
+  position: relative;
+}
+
+.nav-checkout a:hover::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #F0A202;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-checkout a:hover::before {
+  transform: scaleX(1);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+body {
+  background-color: #F0A202;
+}
+
+#form-wrapper {
+  background-color: #b50721;
+  margin: auto;
+  margin-top: 100px;
+  width: 600px;
+  height: auto;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #F0A202;
+}
+
+#header-checkout {
+  background-color: black;
+  border-radius: 10px 10px 0px 0px;
+  border: #F0A202 solid 1px;
+}
+
+h1 {
+  color: #F0A202;
+  font-family: 'Protest Revolution', sans-serif;
+}
+
+h5 {
+  color: #F0A202;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Reem Kufi Fun', sans-serif;
+}
+
+i {
+  color: #F0A202;
+}
+
+button i {
+  color: white;
+}
+
+hr {
+  border-color: #E6C9AC;
+}
+
+.purchase {
+  background-color: #F0A202 !important;
+  color: black;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #F0A202;
+  margin-top: 8px;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Protest Revolution', sans-serif;
+  font-weight: 800;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+select {
+  display: inline;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.payment-icons {
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+
+mb-1 {
+  margin-bottom: 1rem;
+  font-family: 'Reem Kufi Fun', sans-serif;
+}
+
+.checkout-entry {
+  display: flex;
+  gap: 20px;
+  font-family: 'Reem Kufi Fun', sans-serif;
+  color: #F0A202;
+  margin-top: 3px;
+}
+
+.checkout-entry input {
+  width: 70%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #F0A202;
+}
+
+.col{
+  margin-top: 20px;
+}
+
+.form-control{
+  width: 70%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #F0A202;
+}
+
+#ccv{
+  margin-top: 20px;
+}
+
+mb-1{
+  margin-right: 10px;
+}
+
+.lock-image{
+  width: 6px;
+  height: 6px;
+  margin-bottom: 0;
+  margin-top: 50px;
+}
+
+
+#checkoutItems {
+  background-color: black; /* Already set, consider adjusting if needed */
+  color: #F0A202; /* Text color for better visibility */
+  padding: 20px; /* Add padding around the items for spacing */
+  border-radius: 8px; /* Match other design elements */
+  border-bottom: 1px solid #F0A202; /* Highlight each item */
+  font-family: 'Reem Kufi Fun', sans-serif;
+  margin-top: 20px; /* Ensure it doesn't stick to elements above */
+}
+
+#cart-item {
+  border-bottom: 1px solid #F0A202; /* Highlight each item */
+  padding: 10px 0; /* Add padding for each item for spacing */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Reem Kufi Fun', sans-serif; /* Match your chosen font */
+}
+
+#cart-item span {
+  color: #F0A202; /* Ensure text is visible and matches the theme */
+  font-family: 'Reem Kufi Fun', sans-serif; /* Match your chosen font */
+}
+
+#checkoutItems button {
+  background-color: #F0A202; /* Use the theme's accent color */
+  color: black; /* Text color for buttons */
+  border: none; /* Remove default border */
+  padding: 5px 10px; /* Padding inside the buttons */
+  gap: 10px; /* Add space between icon and text */
+  cursor: pointer; /* Indicate these are clickable */
+  margin-left: 10px; /* Add space between buttons */
+  border-radius: 5px; /* Rounded corners for the buttons */
+  align-self: center; /* Center the buttons */
+  align-items: center; /* Center the buttons */
+  justify-content: center;
+  flex: 0 1 auto; /* Allows the button to grow and shrink but not fill the space */
+  min-width: 50px; /* Minimum width for all buttons */
+}
+
+#checkoutItems button:hover {
+  background-color: #b50721; /* Darker shade on hover for feedback */
+}
+
+#cartTotal {
+  color: black; /* Ensure visibility */
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 10px 0; /* Spacing above and below */
+  border-top: 1px solid #F0A202; /* Separator from items */
+  border-bottom: 1px solid black;
+  font-family: 'Reem Kufi Fun', sans-serif; /* Consistent font */
+}

@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun:wght@400..700&display=swap');
+
+.contact-page{
+    display: flex;
+    flex-direction: column;
+    background-color: #b50721;
+}
+
+.contact-header{
+    display: flex;
+    flex-direction: row;
+    background-color: #b50721;
+}
+
+.contact-navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.contact-navbar a{
+    text-decoration: none;
+    color: #F0A202;
+    font-family: "Protest Revolution" , serif;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 500;
+    gap: 30px;
+    cursor: pointer;
+}
+
+.contact-navbar a:hover{
+    text-decoration: underline;
+}
+
+.nav-page-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-page-list h1{
+    font-family: "Protest Revolution" , serif;
+    color: #F0A202;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.nav-page-list a{
+    text-decoration: none;
+    color: #F0A202;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-page-list ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin-right: 20px;
+    gap: 20px;
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-page-list li{
+    display: flex;
+    list-style-type: none;
+    margin-right: 20px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav-page-list a:hover{
+    text-decoration: underline;
+}
+
+.nav-page-list a{
+    text-decoration: none;
+    color: #F0A202;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-family: 'Reem Kufi Fun', sans-serif;
+}
+
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-form h2{
+    font-family: "Protest Revolution" , serif;
+    color: #F0A202;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.form-items{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px;
+    width: fit-content;
+    color: black;
+}
+
+.form-input{
+    font-family: 'Reem Kufi Fun', sans-serif;
+    color: black;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.form-message{
+    font-family: 'Reem Kufi Fun', sans-serif;
+    color: black;
+    font-weight: 500;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.send-button{
+    font-family: "Protest Revolution", serif;
+    color: #F0A202;
+    font-size: 1.5rem;
+    text-align: center;
+    justify-content: center;
+    font-weight: 500;
+    background-color: black;
+    border: none;
+    border-radius: 15px;
+    margin-top: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.send-button:hover{
+    background-color: #F0A202;
+    color: black;
+}
+
+.contact-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.contact-details h4{
+    font-family: "Protest Revolution" , serif;
+    color: #F0A202;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.contact-details p{
+    font-family: 'Reem Kufi Fun', sans-serif;
+    color: #F0A202;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.contact-details a{
+    font-family: 'Reem Kufi Fun', sans-serif;
+    color: #F0A202;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    text-underline-position: below;
+}
+
+.contact-details a:hover{
+    text-decoration: underline;
+}

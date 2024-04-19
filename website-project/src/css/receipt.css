@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&display=swap');
+
+.receipt-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    margin-top: 500px;
+}
+
+.thanks-message{
+    color: #F0A202;
+    font-family: 'Protest Revolution', sans-serif;
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+.print-offer{
+    color: #F0A202;
+    font-family: 'Protest Revolution', sans-serif;
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+.print-button{
+    background-color: #B50721;
+    color: #F0A202;
+    font-family: 'Protest Revolution', sans-serif;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.print-button:hover{
+    background-color: #F0A202;
+    color: #B50721;
+    transition: all 0.2s ease-in-out;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Your Order!</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="receipt-body">
+    <h1 class="thanks-message">Thank You! Your Order Has Been Successful!</h1>
+    <p class="print-offer">You can print a copy of your receipt for your records.</p>
+    <button id="printReceipt" class="print-button">Print Receipt</button>
+
+    <script>
+        // Load cart data from local storage
+        function loadCartFromLocalStorage() {
+            const storedCart = localStorage.getItem('cart');
+            return storedCart ? JSON.parse(storedCart) : [];
+        }
+
+        const cartData = loadCartFromLocalStorage();
+        const deliveryCharge = 1.99; // Define a fixed delivery charge or retrieve this from local storage if variable
+
+        // Function to generate receipt text
+        function generateReceiptText(cart) {
+            let receiptText = "**Order Summary**\n";
+            cart.forEach(item => {
+                receiptText += `${item.name} x ${item.quantity} - £${(item.price * item.quantity).toFixed(2)}\n`;
+            });
+            const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+            receiptText += `Total: £${total.toFixed(2)}\n + £${deliveryCharge.toFixed(2)} Delivery Fee = £${(total + deliveryCharge).toFixed(2)}`;
+            return receiptText;
+        }
+
+        const receiptText = generateReceiptText(cartData);
+
+        // Event listener for the print button
+        document.getElementById('printReceipt').addEventListener('click', () => {
+            // Create a link to download the receipt as a text file
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(new Blob([receiptText], {type: 'text/plain'}));
+            link.download = 'receipt.txt';
+            link.click();
+        });
+    </script>
+</body>
+</html>
+
